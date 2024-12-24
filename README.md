@@ -3,11 +3,12 @@
 # Netflix GPT
 - Creat react app.
 - Tailwind css.
+- Firebase
 
 # Features
 - Login/Sign up
     - Sign in/ sign up form.
-    - Redirect to browse pahe.
+    - Redirect to browse page.
 - Browse (after Authenticate)
     - Header.
     - Main Movie.
