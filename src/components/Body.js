@@ -6,6 +6,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { remove } from "../utils/movieSlice";
 
 const Body = () => {
     const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const Body = () => {
             else 
             {
                 dispatch(removeUser());
+                dispatch(remove());
                 serUserR(false);
             }
         }); 
