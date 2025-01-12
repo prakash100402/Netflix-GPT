@@ -14,7 +14,7 @@ const Body = () => {
     const appRoute = createBrowserRouter([
         {
             path: "/",
-            element: <Login />,
+            element: userR ? <Browse /> : <Login/>,
         },
 
         {
@@ -35,7 +35,7 @@ const Body = () => {
 
     useEffect(()=>{
         const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 const { uid, email, displayName, photoURL } = user;
                 dispatch(addUser({ uid:uid, email:email, displayName:displayName, photoURL:photoURL }));
@@ -47,6 +47,10 @@ const Body = () => {
                 serUserR(false);
             }
         }); 
+
+        return() => {
+            unsubscribe();
+        };
 
     },[dispatch]);
 

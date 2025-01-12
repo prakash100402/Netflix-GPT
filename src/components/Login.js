@@ -1,6 +1,6 @@
 import Header from "./Header";
 import { Link, useNavigate } from "react-router-dom";
-import { BGLOGO } from "../utils/utilsLinks";
+import { BGLOGO, USERLOGO } from "../utils/utilsLinks";
 import { useRef, useState } from "react";
 import { validation } from "../utils/validation";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -28,7 +28,7 @@ const Login = () => {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    updateProfile(user, { displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/78205194?v=4" })
+                    updateProfile(user, { displayName: name.current.value, photoURL: USERLOGO })
                     .then(() => {
                         const { uid, email, displayName, photoURL } = auth.currentUser;
                         dispatch(addUser({ uid:uid, email:email, displayName:displayName, photoURL:photoURL }));   
@@ -62,6 +62,7 @@ const Login = () => {
 
     const switchForm = () => {
         setIsSignIn(!isSignIn);
+        console.log(isSignIn);
         setErrorMessage(null);
     }
 
@@ -73,9 +74,9 @@ const Login = () => {
             </div>
             <form onSubmit={(e) => e.preventDefault()} className="absolute bg-black w-3/12 p-12 bg-opacity-75 my-36 mx-auto right-0 left-0 pl-16 rounded-sm">
                 <h1 className="text-white text-4xl p-2 m-2 ">{isSignIn ? "Sign In" : "Sign Up"}</h1>
-                {!isSignIn && <input ref={name} type="text" placeholder="Full Name" className="p-4 m-2 rounded w-[320px] bg-black bg-opacity-75 border-2 border-gray-800 text-gray-300 " />}
-                <input ref={email} type="text" placeholder="Email or Mobile number" className="p-4 m-2 rounded w-[320px] bg-black bg-opacity-75 border-2 border-gray-800 text-gray-300 " />
-                <input ref={password} type="password" placeholder="Password" className="p-4 m-2 rounded w-[320px] bg-black bg-opacity-75 border-2 border-gray-800 text-gray-300 " />
+                {!isSignIn && <input ref={name} type="text" placeholder="Full Name" defaultValue="Prakash Kumar Sah"  className="p-4 m-2 rounded w-[320px] bg-black bg-opacity-75 border-2 border-gray-800 text-gray-300 " />}
+                <input ref={email} type="text" placeholder="Email or Mobile number" defaultValue="avenjer2002@gmail.com" className="p-4 m-2 rounded w-[320px] bg-black bg-opacity-75 border-2 border-gray-800 text-gray-300 " />
+                <input ref={password} type="password" placeholder="Password" defaultValue="Sonu@2002" className="p-4 m-2 rounded w-[320px] bg-black bg-opacity-75 border-2 border-gray-800 text-gray-300 " />
 
                 <h1 className="text-red-600 p-2">{errorMessage}</h1>
 
