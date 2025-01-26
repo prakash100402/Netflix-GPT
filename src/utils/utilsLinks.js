@@ -5,6 +5,7 @@ export const MOVIE_API = "https://api.themoviedb.org/3/movie/now_playing?languag
 export const PLAY = "https://emojigraph.org/media/emojidex/play-button_25b6-fe0f.png";
 export const INFO = "https://static-00.iconduck.com/assets.00/circle-information-icon-256x256-iur97f49.png";
 export const TRAILER_LINK = "https://www.youtube.com/embed/";
+export const movieImage = "https://image.tmdb.org/t/p/w500/";
 
 export const API_OPTIONS = {
     method: 'GET',

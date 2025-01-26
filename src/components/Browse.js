@@ -8,7 +8,7 @@ const Browse = () => {
     useNowPlay();
 
     return(
-        <div className="flex">
+        <div>
             <Header />
             <MainContainer/>
             <SecondaryContainer/>
