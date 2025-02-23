@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { remove } from "../utils/movieSlice";
+import GptSearch from "./GptSearch";
 
 const Body = () => {
     const dispatch = useDispatch();
@@ -21,6 +22,11 @@ const Body = () => {
         {
             path: "/browse",
             element: userR ? <Browse /> : <Login/>,
+        },
+
+        {
+            path: "/browse/GPTsearch",
+            element: userR ? <GptSearch /> : <Login/>,
         },
 
         {
