@@ -81,6 +81,6 @@ npm run start
 `.env` file is **gitignored** to protect sensitive information.
 
 ## 🌍 Live Demo
-Check out the live version of **Netflix GPT AI** here: [Netflix GPT Live](https://vercel.com/prakash100402s-projects/netflix-gpt/53dfg8fnrxTwJD8LbGcTzvGGtk9U)
+Check out the live version of **Netflix GPT AI** here: [Netflix GPT Live](https://netflix-gpt-git-main-prakash100402s-projects.vercel.app)
 
 🎥 Enjoy streaming with **Netflix GPT AI!** 🍿
