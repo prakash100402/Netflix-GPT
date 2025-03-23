@@ -7,9 +7,14 @@ const MovieCard = ({ list }) => {
         <img
           draggable="false"
           alt={list?.original_title || "Movie Poster"}
-          src={movieImage + list?.poster_path}
+          src={list?.poster_path ? movieImage + list.poster_path : "https://static.vecteezy.com/system/resources/previews/011/860/693/non_2x/its-movie-time-vector.jpg"}
           className="rounded-lg shadow-md p-[10px]"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "https://static.vecteezy.com/system/resources/previews/011/860/693/non_2x/its-movie-time-vector.jpg";
+          }}
         />
+
       </div>
     </div>
   );

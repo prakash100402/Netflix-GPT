@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS, TRENDING_API } from "../utils/utilsLinks";
 import { trendingMovies } from "../utils/movieSlice";
 
 const useTrendingMovies = () => {
     const dispatch = useDispatch();
+    const trending = useSelector((store) => store.movies.trendingMovies);
+
 
     const getMovie = async () => {
         const data = await fetch(TRENDING_API, API_OPTIONS);
@@ -13,7 +15,7 @@ const useTrendingMovies = () => {
     };
 
     useEffect(() => {
-        getMovie();
+        !trending && getMovie();
         // eslint-disable-next-line
     }, []);
 };

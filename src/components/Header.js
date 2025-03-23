@@ -25,8 +25,8 @@ const Header = () => {
     };
 
     return (
-        <div className="absolute py-3 px-8 z-10 pl-72 flex justify-between w-screen bg-gradient-to-b from-black gap-[5px]">
-            <img className="w-44" src={LOGO} alt="logo" />
+        <div className="absolute py-3 px-8 z-10 lg:pl-72 sm:pl-[100px] md:pl-[150px] flex justify-between w-screen bg-gradient-to-b from-black gap-[5px]">
+            <img className="sm:w-44 w-28" src={LOGO} alt="logo" />
             {user && <div className="flex pr-72 self-center">
                 <Link to={loc === "/browse/GPTsearch" ? "/browse" : "/browse/GPTsearch"}>
                     <GptSearchButton text={loc === "/browse/GPTsearch" ? "Home" : "GPT Search"} />
