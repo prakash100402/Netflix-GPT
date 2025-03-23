@@ -74,7 +74,7 @@ npm install
 
 ### Run the Application:
 ```sh
-npm run dev
+npm run start
 ```
 
 ## 🔒 Environment Variables
